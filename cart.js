@@ -100,6 +100,8 @@ function addEvents(p, m, q, i, clone) {
             let msg = [(Number(val[0])-1).toString(), val[1], val[2], val[3]];
             localStorage.removeItem(i);
             localStorage.setItem(i,msg);
+            total_price -= Number(val[2]);
+            total.innerText = total_price;
             clone.classList.add("hidden");
             cart_no.innerText = Number(localStorage.getItem("num")) - 1;
             localStorage.removeItem("num");
